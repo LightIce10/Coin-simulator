@@ -44,28 +44,52 @@ function btnClicked() {
 
 // HTML Variables
 let diceOutputEl = document.getElementById("dice-output");
-let
-// Count variables
-let sideOne = 0;
-let sideTwo = 0;
-let sideThree = 0;
-let sideFour = 0;
-let sideFive = 0;
-let sideSix = 0;
+let sideOneEl = document.getElementById("side-1-Out");
+let sideTwoEl = document.getElementById("side-2-Out");
+let sideThreeEl = document.getElementById("side-3-Out");
+let sideFourEl = document.getElementById("side-4-Out");
+let sideFiveEl = document.getElementById("side-5-Out");
+let sideSixEl = document.getElementById("side-6-Out");
 
+// Count variables
+let numOne = 0;
+let numTwo = 0;
+let numThree = 0;
+let numFour = 0;
+let numFive = 0;
+let numSix = 0;
 
 // Button Event Listener
 document.getElementById("dice-btn").addEventListener("click", diceRolled);
 
-function btnClicked() {
+function diceRolled() {
   // Generate a Random Number
   let randNum2 = Math.random();
-  console.log(randNum2);
 
   // Simulate dice roll
-  if (randNum2 < 0.5) {
-    outputEl.innerHTML = "<img src='img/1.png'>";
-  } else if (condition) {
-    
-  } 
+  if (randNum2 < 0.16666666666) {
+    diceOutputEl.innerHTML = "<img src='img/1.png'>";
+    numOne = numOne + 1;
+    sideOneEl.innerHTML = numOne;
+  } else if (randNum2 < 0.33333333333) {
+    diceOutputEl.innerHTML = "<img src='img/2.png'>";
+    numTwo = numTwo + 1;
+    sideTwoEl.innerHTML = numTwo;
+  } else if (randNum2 < 0.5) {
+    diceOutputEl.innerHTML = "<img src='img/3.png'>";
+    numThree = numThree + 1;
+    sideThreeEl.innerHTML = numThree;
+  } else if (randNum2 < 0.66666666666) {
+    diceOutputEl.innerHTML = "<img src='img/4.png'>";
+    numFour = numFour + 1;
+    sideFourEl.innerHTML = numFour;
+  } else if (randNum2 < 0.83333333333) {
+    diceOutputEl.innerHTML = "<img src='img/5.png'>";
+    numFive = numFive + 1;
+    sideFiveEl.innerHTML = numFive;
+  } else {
+    diceOutputEl.innerHTML = "<img src='img/6.png'>";
+    numSix = numSix + 1;
+    sideSixEl.innerHTML = numSix;
+  }
 }
